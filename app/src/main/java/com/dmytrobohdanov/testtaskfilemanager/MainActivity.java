@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //show root folder(its id is 1)
+        //show root folder(its folder id is 1)
         showFragment(1);
     }
 

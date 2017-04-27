@@ -18,19 +18,19 @@ public class App extends Application {
         DBHandler handler = DBHandler.getInstance(getApplicationContext());
 
         //adding some data to DB if there is nothing there
-//        if (handler.getFilesByFolderId(0).isEmpty()) {
-        addSomeData(handler);
-//        }
+        if (handler.getFilesByFolderId(1).isEmpty()) {
+            addSomeData(handler);
+        }
     }
 
     private void addSomeData(DBHandler handler) {
-        int firstFolderId = handler.addDataToDB(new DataModel("first folder", 0, true, new Date(2017, 11, 12), FileType.NONE, true, true));
-        int secondFolderId = handler.addDataToDB(new DataModel("second  folder", 0, true, new Date(2017, 11, 12), FileType.NONE, false, true));
-        int thirdFolderId = handler.addDataToDB(new DataModel("third folder", 0, true, new Date(2017, 11, 12), FileType.NONE, true, false));
+        int firstFolderId = handler.addDataToDB(new DataModel("first folder", 1, true, new Date(2017, 11, 12), FileType.NONE, true, true));
+        int secondFolderId = handler.addDataToDB(new DataModel("second  folder", 1, true, new Date(2017, 11, 12), FileType.NONE, false, true));
+        int thirdFolderId = handler.addDataToDB(new DataModel("third folder", 1, true, new Date(2017, 11, 12), FileType.NONE, true, false));
 
-        handler.addDataToDB(new DataModel("Movie 0", 0, true, new Date(2017, 11, 12), FileType.MOVIE, true, true));
-        handler.addDataToDB(new DataModel("PDF 0", 0, true, new Date(2017, 11, 12), FileType.PDF, true, false));
-        handler.addDataToDB(new DataModel("MUSIC 0", 0, true, new Date(2017, 11, 12), FileType.MUSIC, false, false));
+        handler.addDataToDB(new DataModel("Movie 0", 1, true, new Date(2017, 11, 12), FileType.MOVIE, true, true));
+        handler.addDataToDB(new DataModel("PDF 0", 1, true, new Date(2017, 11, 12), FileType.PDF, true, false));
+        handler.addDataToDB(new DataModel("MUSIC 0", 1, true, new Date(2017, 11, 12), FileType.MUSIC, false, false));
 
         handler.addDataToDB(new DataModel("Movie 1", firstFolderId, true, new Date(2017, 11, 12), FileType.MOVIE, true, true));
         handler.addDataToDB(new DataModel("PDF 1", firstFolderId, true, new Date(2017, 11, 12), FileType.PDF, true, false));

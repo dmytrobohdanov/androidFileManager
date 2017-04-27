@@ -1,11 +1,9 @@
 package com.dmytrobohdanov.testtaskfilemanager.Utils.Database;
 
-import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import com.dmytrobohdanov.testtaskfilemanager.Utils.Constants;
 import com.dmytrobohdanov.testtaskfilemanager.Utils.FileType;
 import com.dmytrobohdanov.testtaskfilemanager.Utils.Utils;
 
@@ -29,7 +27,7 @@ public class DBHelper extends SQLiteOpenHelper {
     //db name
     private static final String DATABASE_NAME = "testTaskDB.db";
     //version of db
-    private static final int DATABASE_VERSION = 3;
+    private static final int DATABASE_VERSION = 7;
     //table creation script
     private static final String DB_SCRIPT_CREATE_DATA_TABLE = "create table "
             + TABLE_DATA + " ("
@@ -72,33 +70,7 @@ public class DBHelper extends SQLiteOpenHelper {
      */
     private void insertRootFolder(SQLiteDatabase db) {
         DataModel rootFolder
-                = new DataModel("rootFolder", 1, true, new Date(0), FileType.NONE, false, false);
-
-        ContentValues contentValues = new ContentValues();
-
-        contentValues.put(DBHelper.COLUMN_FILE_NAME, rootFolder.getFileName());
-
-        contentValues.put(DBHelper.COLUMN_FILE_TYPE, rootFolder.getFileType().name()); //todo check
-        contentValues.put(DBHelper.COLUMN_MODIFIED_DATE, rootFolder.getModifiedDate().getTime());
-        contentValues.put(DBHelper.COLUMN_FOLDER_ID, rootFolder.getFolderId());
-
-        if (rootFolder.isOrange()) {
-            contentValues.put(DBHelper.COLUMN_IS_ORANGE, Constants.INT_TRUE);
-        } else {
-            contentValues.put(DBHelper.COLUMN_IS_ORANGE, Constants.INT_FALSE);
-        }
-
-        if (rootFolder.isBlue()) {
-            contentValues.put(DBHelper.COLUMN_IS_BLUE, Constants.INT_TRUE);
-        } else {
-            contentValues.put(DBHelper.COLUMN_IS_BLUE, Constants.INT_FALSE);
-        }
-
-        if (rootFolder.isFolder()) {
-            contentValues.put(DBHelper.COLUMN_IS_FOLDER, Constants.INT_TRUE);
-        } else {
-            contentValues.put(DBHelper.COLUMN_IS_FOLDER, Constants.INT_FALSE);
-        }
+                = new DataModel("rootFolder", 0, true, new Date(0), FileType.NONE, false, false);
 
         db.insert(TABLE_DATA, null, Utils.getContentValuesFromDataModel(rootFolder));
     }
