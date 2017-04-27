@@ -3,6 +3,8 @@ package com.dmytrobohdanov.testtaskfilemanager.Utils.Database;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 
+import java.util.ArrayList;
+
 /**
  * Contains methods to work with DB
  */
@@ -21,4 +23,8 @@ public class DBHendler {
         return instance;
     }
 
+    public ArrayList<DataModel> getFilesByFolderId(int folderId) {
+        //todo return data
+        return null;
+    }
 }

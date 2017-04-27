@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/data_holder_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+
+    <!--color line-->
+    <LinearLayout
+        android:layout_width="@dimen/data_holder_color_line_width"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/data_holder_margin_sides"
+        android:layout_marginRight="@dimen/data_holder_margin_sides"
+        android:orientation="vertical">
+
+        <View
+            android:id="@+id/data_holder_orange_line"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/dataOrange"
+            android:visibility="gone" />
+
+        <View
+            android:id="@+id/data_holder_blue_line"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/dataBlue"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <!--icon-->
+    <ImageView
+        android:id="@+id/data_holder_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/data_holder_margin_sides"
+        android:layout_marginRight="@dimen/data_holder_margin_sides"
+        app:srcCompat="@drawable/ic_folder" />
+
+    <!--text-->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/data_holder_margin_sides"
+        android:layout_marginRight="@dimen/data_holder_margin_sides"
+        android:layout_weight="6"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/data_holder_file_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="name"
+            android:textSize="@dimen/data_holder_file_name_text_size" />
+
+        <TextView
+            android:id="@+id/data_holder_modified_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="date" />
+    </LinearLayout>
+
+</LinearLayout>

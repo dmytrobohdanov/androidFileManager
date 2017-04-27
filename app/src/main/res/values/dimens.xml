@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="data_holder_color_line_width">5dp</dimen>
+    <dimen name="data_holder_margin_sides">5dp</dimen>
+    <dimen name="data_holder_file_name_text_size">20sp</dimen>
+</resources>

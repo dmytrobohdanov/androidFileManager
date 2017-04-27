@@ -54,6 +54,10 @@ public class DataModel {
         return isFolder;
     }
 
+    public void setFolder(boolean folder) {
+        isFolder = folder;
+    }
+
     /**
      * Setter to set data from database representation of bool
      *
@@ -67,10 +71,6 @@ public class DataModel {
         } else {
             throw new IllegalArgumentException("wrong argument passed to method");
         }
-    }
-
-    public void setFolder(boolean folder) {
-        isFolder = folder;
     }
 
     public Date getModifiedDate() {
@@ -93,10 +93,6 @@ public class DataModel {
         return isOrange;
     }
 
-    public void setOrange(boolean orange) {
-        isOrange = orange;
-    }
-
     /**
      * Setter to set data from database representation of bool
      *
@@ -112,8 +108,16 @@ public class DataModel {
         }
     }
 
+    public void setOrange(boolean orange) {
+        isOrange = orange;
+    }
+
     public boolean isBlue() {
         return isBlue;
+    }
+
+    public void setBlue(boolean blue) {
+        isBlue = blue;
     }
 
     /**
@@ -131,7 +135,8 @@ public class DataModel {
         }
     }
 
-    public void setBlue(boolean blue) {
-        isBlue = blue;
+    public String getModifiedDateString() {
+        //todo get string from date
+        return "January 1, 1970";
     }
 }
