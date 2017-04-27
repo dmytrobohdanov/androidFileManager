@@ -22,6 +22,8 @@ import java.util.ArrayList;
  * keeps recycle view with data
  */
 public class DataListFragment extends Fragment {
+    public static final String TAG = "dataListFrag";
+
     RecyclerView recyclerView;
     DataRVAdapter rvAdapter;
     RecyclerView.LayoutManager rvLayoutManager;
@@ -83,4 +85,5 @@ public class DataListFragment extends Fragment {
         rvAdapter.setData(dataList);
         rvAdapter.notifyDataSetChanged();
     }
+
 }

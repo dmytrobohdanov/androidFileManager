@@ -13,7 +13,7 @@ public class Utils {
     public static ContentValues getContentValuesFromDataModel(DataModel dataModel) {
         ContentValues contentValues = new ContentValues();
 
-        contentValues.put(DBHelper.COLUMN_ID, dataModel.getId());
+//        contentValues.put(DBHelper.COLUMN_ID, dataModel.getId());
         contentValues.put(DBHelper.COLUMN_FILE_NAME, dataModel.getFileName());
 
         contentValues.put(DBHelper.COLUMN_FILE_TYPE, dataModel.getFileType().name()); //todo check
