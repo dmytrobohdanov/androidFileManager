@@ -12,7 +12,7 @@ import android.view.ViewGroup;
 
 import com.dmytrobohdanov.testtaskfilemanager.R;
 import com.dmytrobohdanov.testtaskfilemanager.Utils.Constants;
-import com.dmytrobohdanov.testtaskfilemanager.Utils.Database.DBHendler;
+import com.dmytrobohdanov.testtaskfilemanager.Utils.Database.DBHandler;
 import com.dmytrobohdanov.testtaskfilemanager.Utils.Database.DataModel;
 
 import java.util.ArrayList;
@@ -76,7 +76,7 @@ public class DataListFragment extends Fragment {
 
         //getting data to display from DB
         if (getArguments() != null && getArguments().containsKey(Constants.KEY_FOLDER_ID)) {
-            dataList = DBHendler.getInstance(getContext()).getFilesByFolderId(getArguments().getInt(Constants.KEY_FOLDER_ID));
+            dataList = DBHandler.getInstance(getContext()).getFilesByFolderId(getArguments().getInt(Constants.KEY_FOLDER_ID));
         } else {
             throw new IllegalStateException("expecting id of some folder to display");
         }

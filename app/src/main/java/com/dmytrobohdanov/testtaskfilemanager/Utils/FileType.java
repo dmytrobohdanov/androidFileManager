@@ -7,5 +7,6 @@ public enum FileType {
     IMAGE,
     PDF,
     MOVIE,
-    MUSIC
+    MUSIC,
+    NONE //to handle folder or some errors
 }

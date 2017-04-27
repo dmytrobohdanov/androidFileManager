@@ -35,8 +35,19 @@ public class DataModel {
         this.isBlue = isBlue;
     }
 
-    public DataModel() {
+    /**
+     * Constructor without id, to create dataModel instance to put in DB to get ID
+     */
+    public DataModel(String fileName, int folderId, boolean isFolder, Date modifiedDate, FileType fileType, boolean isOrange, boolean isBlue) {
+        this.folderId = folderId;
+        this.fileName = fileName;
+        this.isFolder = isFolder;
+        this.modifiedDate = modifiedDate;
+        this.fileType = fileType;
+        this.isOrange = isOrange;
+        this.isBlue = isBlue;
     }
+
 
     public int getId() {
         return id;
@@ -58,6 +69,10 @@ public class DataModel {
         return isFolder;
     }
 
+    public void setFolder(boolean folder) {
+        isFolder = folder;
+    }
+
     /**
      * Setter to set data from database representation of bool
      *
@@ -73,12 +88,12 @@ public class DataModel {
         }
     }
 
-    public void setFolder(boolean folder) {
-        isFolder = folder;
-    }
-
     public Date getModifiedDate() {
         return modifiedDate;
+    }
+
+    public void setModifiedDate(long time) {
+        this.modifiedDate = new Date(time);
     }
 
     public void setModifiedDate(Date modifiedDate) {
@@ -97,10 +112,6 @@ public class DataModel {
         return isOrange;
     }
 
-    public void setOrange(boolean orange) {
-        isOrange = orange;
-    }
-
     /**
      * Setter to set data from database representation of bool
      *
@@ -116,8 +127,16 @@ public class DataModel {
         }
     }
 
+    public void setOrange(boolean orange) {
+        isOrange = orange;
+    }
+
     public boolean isBlue() {
         return isBlue;
+    }
+
+    public void setBlue(boolean blue) {
+        isBlue = blue;
     }
 
     /**
@@ -133,10 +152,6 @@ public class DataModel {
         } else {
             throw new IllegalArgumentException("wrong argument passed to method");
         }
-    }
-
-    public void setBlue(boolean blue) {
-        isBlue = blue;
     }
 
     public String getModifiedDateString() {

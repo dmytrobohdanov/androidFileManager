@@ -4,21 +4,26 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import com.dmytrobohdanov.testtaskfilemanager.Utils.FileType;
+import com.dmytrobohdanov.testtaskfilemanager.Utils.Utils;
+
+import java.util.Date;
+
 /**
  * Database
  */
 public class DBHelper extends SQLiteOpenHelper {
+    //data table columns
+    public static final String COLUMN_ID = "id";
+    public static final String COLUMN_FILE_NAME = "fileName";
+    public static final String COLUMN_FILE_TYPE = "fileType";
+    public static final String COLUMN_MODIFIED_DATE = "date";
+    public static final String COLUMN_FOLDER_ID = "folderId";
+    public static final String COLUMN_IS_ORANGE = "isOrange";
+    public static final String COLUMN_IS_BLUE = "isBlue";
+    public static final String COLUMN_IS_FOLDER = "isFolder";
     //table name
     static final String TABLE_DATA = "tableData";
-    //data table columns
-    static final String COLUMN_ID = "id";
-    static final String COLUMN_FILE_NAME = "fileName";
-    static final String COLUMN_FILE_TYPE = "fileType";
-    static final String COLUMN_DATE = "date";
-    static final String COLUMN_FOLDER_ID = "folderId";
-    static final String COLUMN_IS_ORANGE = "isOrange";
-    static final String COLUMN_IS_BLUE = "isBlue";
-    static final String COLUMN_IS_FILE = "isFile";
     //db name
     private static final String DATABASE_NAME = "testTaskDB.db";
     //version of db
@@ -29,11 +34,11 @@ public class DBHelper extends SQLiteOpenHelper {
             + COLUMN_ID + " integer primary key autoincrement,"
             + COLUMN_FILE_NAME + " text,"
             + COLUMN_FILE_TYPE + " text,"
-            + COLUMN_DATE + " text,"
+            + COLUMN_MODIFIED_DATE + " long,"
             + COLUMN_FOLDER_ID + " integer,"
             + COLUMN_IS_ORANGE + " integer,"
             + COLUMN_IS_BLUE + " integer,"
-            + COLUMN_IS_FILE + " integer);";
+            + COLUMN_IS_FOLDER + " integer);";
 
 
     private static DBHelper instance;
@@ -56,6 +61,18 @@ public class DBHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(DB_SCRIPT_CREATE_DATA_TABLE);
+
+        insertRootFolder(db);
+    }
+
+    /**
+     * inserting root folder, that keeps all other folders and files
+     */
+    private void insertRootFolder(SQLiteDatabase db) {
+        DataModel rootFolder
+                = new DataModel("rootFolder", 0, true, new Date(0), FileType.NONE, false, false);
+
+        db.insert(TABLE_DATA, null, Utils.getContentValuesFromDataModel(rootFolder));
     }
 
     @Override
