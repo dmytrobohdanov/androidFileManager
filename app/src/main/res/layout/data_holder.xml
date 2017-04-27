@@ -4,6 +4,7 @@
     android:id="@+id/data_holder_layout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_margin="@dimen/data_holder_margin"
     android:orientation="horizontal">
 
 
