@@ -8,24 +8,21 @@ import android.database.sqlite.SQLiteOpenHelper;
  * Database
  */
 public class DBHelper extends SQLiteOpenHelper {
-    //db name
-    private static final String DATABASE_NAME = "testTaskDB.db";
-
-    //version of db
-    private static final int DATABASE_VERSION = 1;
-
     //table name
     static final String TABLE_DATA = "tableData";
-
     //data table columns
     static final String COLUMN_ID = "id";
     static final String COLUMN_FILE_NAME = "fileName";
     static final String COLUMN_FILE_TYPE = "fileType";
     static final String COLUMN_DATE = "date";
+    static final String COLUMN_FOLDER_ID = "folderId";
     static final String COLUMN_IS_ORANGE = "isOrange";
     static final String COLUMN_IS_BLUE = "isBlue";
     static final String COLUMN_IS_FILE = "isFile";
-
+    //db name
+    private static final String DATABASE_NAME = "testTaskDB.db";
+    //version of db
+    private static final int DATABASE_VERSION = 1;
     //table creation script
     private static final String DB_SCRIPT_CREATE_DATA_TABLE = "create table "
             + TABLE_DATA + " ("
@@ -33,6 +30,7 @@ public class DBHelper extends SQLiteOpenHelper {
             + COLUMN_FILE_NAME + " text,"
             + COLUMN_FILE_TYPE + " text,"
             + COLUMN_DATE + " text,"
+            + COLUMN_FOLDER_ID + " integer,"
             + COLUMN_IS_ORANGE + " integer,"
             + COLUMN_IS_BLUE + " integer,"
             + COLUMN_IS_FILE + " integer);";
@@ -41,7 +39,7 @@ public class DBHelper extends SQLiteOpenHelper {
     private static DBHelper instance;
     private Context context;
 
-    DBHelper(Context context){
+    DBHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
         this.context = context;
     }

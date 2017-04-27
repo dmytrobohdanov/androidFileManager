@@ -15,14 +15,18 @@ public class DataModel {
     private FileType fileType;
     private Date modifiedDate;
 
+    //id of folder keep this file
+    private int folderId;
+
     private boolean isOrange;
     private boolean isBlue;
 
     private boolean isFolder;
 
 
-    public DataModel(int id, String fileName, boolean isFolder, Date modifiedDate, FileType fileType, boolean isOrange, boolean isBlue) {
+    public DataModel(int id, String fileName, int folderId, boolean isFolder, Date modifiedDate, FileType fileType, boolean isOrange, boolean isBlue) {
         this.id = id;
+        this.folderId = folderId;
         this.fileName = fileName;
         this.isFolder = isFolder;
         this.modifiedDate = modifiedDate;
@@ -54,10 +58,6 @@ public class DataModel {
         return isFolder;
     }
 
-    public void setFolder(boolean folder) {
-        isFolder = folder;
-    }
-
     /**
      * Setter to set data from database representation of bool
      *
@@ -71,6 +71,10 @@ public class DataModel {
         } else {
             throw new IllegalArgumentException("wrong argument passed to method");
         }
+    }
+
+    public void setFolder(boolean folder) {
+        isFolder = folder;
     }
 
     public Date getModifiedDate() {
@@ -93,6 +97,10 @@ public class DataModel {
         return isOrange;
     }
 
+    public void setOrange(boolean orange) {
+        isOrange = orange;
+    }
+
     /**
      * Setter to set data from database representation of bool
      *
@@ -108,16 +116,8 @@ public class DataModel {
         }
     }
 
-    public void setOrange(boolean orange) {
-        isOrange = orange;
-    }
-
     public boolean isBlue() {
         return isBlue;
-    }
-
-    public void setBlue(boolean blue) {
-        isBlue = blue;
     }
 
     /**
@@ -135,8 +135,20 @@ public class DataModel {
         }
     }
 
+    public void setBlue(boolean blue) {
+        isBlue = blue;
+    }
+
     public String getModifiedDateString() {
         //todo get string from date
         return "January 1, 1970";
+    }
+
+    public int getFolderId() {
+        return folderId;
+    }
+
+    public void setFolderId(int folderId) {
+        this.folderId = folderId;
     }
 }
