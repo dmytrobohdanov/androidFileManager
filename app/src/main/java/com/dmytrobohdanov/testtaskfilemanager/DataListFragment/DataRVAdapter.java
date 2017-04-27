@@ -58,7 +58,6 @@ public class DataRVAdapter extends RecyclerView.Adapter<DataRVHolder> {
             if (dataModel.isFolder()) {
                 ((MainActivity) context).showFragment(dataModel.getId());
             }
-            //todo open new fragment with new data list
         });
 
         //set image

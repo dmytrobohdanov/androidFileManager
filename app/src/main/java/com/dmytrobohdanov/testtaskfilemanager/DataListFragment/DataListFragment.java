@@ -40,7 +40,7 @@ public class DataListFragment extends Fragment {
                 @Override
                 public void onSwiped(RecyclerView.ViewHolder viewHolder, int direction) {
                     if (direction == ItemTouchHelper.LEFT) {
-                        //todo open dialog fragment
+                        //todo change item to actions from dialog
                     }
                 }
             });
@@ -74,7 +74,7 @@ public class DataListFragment extends Fragment {
         recyclerView.setAdapter(rvAdapter);
 
         //attaching swipe listener
-        touchHelper.attachToRecyclerView(recyclerView);
+        //todo  touchHelper.attachToRecyclerView(recyclerView);
 
         //getting data to display from DB
         if (getArguments() != null && getArguments().containsKey(Constants.KEY_FOLDER_ID)) {
