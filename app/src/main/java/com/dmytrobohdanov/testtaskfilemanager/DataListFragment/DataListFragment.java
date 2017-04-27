@@ -1,4 +1,4 @@
-package com.dmytrobohdanov.testtaskfilemanager;
+package com.dmytrobohdanov.testtaskfilemanager.DataListFragment;
 
 
 import android.os.Bundle;
@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.dmytrobohdanov.testtaskfilemanager.R;
 import com.dmytrobohdanov.testtaskfilemanager.Utils.Constants;
 import com.dmytrobohdanov.testtaskfilemanager.Utils.Database.DBHendler;
 import com.dmytrobohdanov.testtaskfilemanager.Utils.Database.DataModel;
