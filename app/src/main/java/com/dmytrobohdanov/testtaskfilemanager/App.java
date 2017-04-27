@@ -28,20 +28,20 @@ public class App extends Application {
         int secondFolderId = handler.addDataToDB(new DataModel("second  folder", 1, true, new Date(2017, 11, 12), FileType.NONE, false, true));
         int thirdFolderId = handler.addDataToDB(new DataModel("third folder", 1, true, new Date(2017, 11, 12), FileType.NONE, true, false));
 
-        handler.addDataToDB(new DataModel("Movie 0", 1, true, new Date(2017, 11, 12), FileType.MOVIE, true, true));
-        handler.addDataToDB(new DataModel("PDF 0", 1, true, new Date(2017, 11, 12), FileType.PDF, true, false));
-        handler.addDataToDB(new DataModel("MUSIC 0", 1, true, new Date(2017, 11, 12), FileType.MUSIC, false, false));
+        handler.addDataToDB(new DataModel("Movie 0", 1, false, new Date(2017, 11, 12), FileType.MOVIE, true, true));
+        handler.addDataToDB(new DataModel("PDF 0", 1, false, new Date(2017, 11, 12), FileType.PDF, true, false));
+        handler.addDataToDB(new DataModel("MUSIC 0", 1, false, new Date(2017, 11, 12), FileType.MUSIC, false, false));
 
-        handler.addDataToDB(new DataModel("Movie 1", firstFolderId, true, new Date(2017, 11, 12), FileType.MOVIE, true, true));
-        handler.addDataToDB(new DataModel("PDF 1", firstFolderId, true, new Date(2017, 11, 12), FileType.PDF, true, false));
-        handler.addDataToDB(new DataModel("MUSIC 1", firstFolderId, true, new Date(2017, 11, 12), FileType.MUSIC, false, false));
+        handler.addDataToDB(new DataModel("Movie 1", firstFolderId, false, new Date(2017, 11, 12), FileType.MOVIE, true, true));
+        handler.addDataToDB(new DataModel("PDF 1", firstFolderId, false, new Date(2017, 11, 12), FileType.PDF, true, false));
+        handler.addDataToDB(new DataModel("MUSIC 1", firstFolderId, false, new Date(2017, 11, 12), FileType.MUSIC, false, false));
 
-        handler.addDataToDB(new DataModel("Movie 2", secondFolderId, true, new Date(2017, 11, 12), FileType.MOVIE, true, true));
-        handler.addDataToDB(new DataModel("PDF 2", secondFolderId, true, new Date(2017, 11, 12), FileType.PDF, true, false));
-        handler.addDataToDB(new DataModel("MUSIC 2", secondFolderId, true, new Date(2017, 11, 12), FileType.MUSIC, false, false));
+        handler.addDataToDB(new DataModel("Movie 2", secondFolderId, false, new Date(2017, 11, 12), FileType.MOVIE, true, true));
+        handler.addDataToDB(new DataModel("PDF 2", secondFolderId, false, new Date(2017, 11, 12), FileType.PDF, true, false));
+        handler.addDataToDB(new DataModel("MUSIC 2", secondFolderId, false, new Date(2017, 11, 12), FileType.MUSIC, false, false));
 
-        handler.addDataToDB(new DataModel("Movie 3", thirdFolderId, true, new Date(2017, 11, 12), FileType.MOVIE, true, true));
-        handler.addDataToDB(new DataModel("PDF 3", thirdFolderId, true, new Date(2017, 11, 12), FileType.PDF, true, false));
-        handler.addDataToDB(new DataModel("MUSIC 3", thirdFolderId, true, new Date(2017, 11, 12), FileType.MUSIC, false, false));
+        handler.addDataToDB(new DataModel("Movie 3", thirdFolderId, false, new Date(2017, 11, 12), FileType.MOVIE, true, true));
+        handler.addDataToDB(new DataModel("PDF 3", thirdFolderId, false, new Date(2017, 11, 12), FileType.PDF, true, false));
+        handler.addDataToDB(new DataModel("MUSIC 3", thirdFolderId, false, new Date(2017, 11, 12), FileType.MUSIC, false, false));
     }
 }

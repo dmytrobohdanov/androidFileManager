@@ -27,7 +27,7 @@ public class DBHelper extends SQLiteOpenHelper {
     //db name
     private static final String DATABASE_NAME = "testTaskDB.db";
     //version of db
-    private static final int DATABASE_VERSION = 7;
+    private static final int DATABASE_VERSION = 8;
     //table creation script
     private static final String DB_SCRIPT_CREATE_DATA_TABLE = "create table "
             + TABLE_DATA + " ("

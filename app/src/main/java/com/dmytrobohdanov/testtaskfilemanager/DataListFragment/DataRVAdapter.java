@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.dmytrobohdanov.testtaskfilemanager.MainActivity;
 import com.dmytrobohdanov.testtaskfilemanager.R;
 import com.dmytrobohdanov.testtaskfilemanager.Utils.Database.DataModel;
 
@@ -54,6 +55,9 @@ public class DataRVAdapter extends RecyclerView.Adapter<DataRVHolder> {
         holder.modifiedDate.setText(dataModel.getModifiedDateString());
 
         holder.layout.setOnClickListener((view) -> {
+            if (dataModel.isFolder()) {
+                ((MainActivity) context).showFragment(dataModel.getId());
+            }
             //todo open new fragment with new data list
         });
 
